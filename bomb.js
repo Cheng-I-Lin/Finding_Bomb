@@ -1,3 +1,17 @@
+var scale=(window.outerHeight/824);
+const text=document.getElementsByClassName("textContainer");
+for(t of text){
+    t.style.fontSize=scale*1.5+"em";
+}
+const text2=document.getElementsByClassName("bigText");
+for(t of text2){
+    t.style.fontSize=scale*1.8+"em";
+}
+const text3=document.getElementsByClassName("pageText");
+for(t of text3){
+    t.style.fontSize=scale*1.75+"em";
+}
+document.getElementById("grid").style.fontSize=scale*2+"em";
 var gameMap=[];
             var coverMap=[];
             const grid=document.getElementById("grid");

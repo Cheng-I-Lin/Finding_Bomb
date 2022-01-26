@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=100px, height=device-height, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Where's the Bomb?</title>
         <link rel="icon" type="image/png" href="bomb-2025548_1280.png"/>
     </head>
@@ -18,7 +18,7 @@
         <div id="grid" style="position: absolute; left: 5%; top: 10%; width: 60%; height: 80%; background-color: rgb(198, 199, 199); text-align: right; font-size: 200%; overflow: hidden;"></div>
         <canvas id="tileCanvas" style="position: absolute;"></canvas>
         <canvas id="coverCanvas" style="position: absolute;" onmousedown="redFlagged(event)"></canvas>
-        <div id="intro" style="position: absolute; left: 0%; bottom: 0%; width: 100%; height: 100%; background-color: beige; font-size: 150%; text-align: center;">
+        <div class="textContainer" id="intro" style="position: absolute; left: 0%; bottom: 0%; width: 100%; height: 100%; background-color: beige; font-size: 150%; text-align: center;">
             <br><br><br><h2>Welcome to Where's the Bomb</h2><br>
             In this game, you will be clicking on the tiles to check for hidden bombs.<br>
             If you clicked on a bomb, you lose the game. However, if the tile did not<br>
@@ -30,7 +30,7 @@
             <br><br><br><strong>Press NEXT to select degree of difficulty</strong><br><br>
             <button style="width: 200px; height: 100px; background-color: rgb(241, 183, 94);" onclick="nextGame();"><strong>NEXT</strong></button>
         </div>
-        <div id="gameSetUp" style="position: absolute; left: 0%; bottom: 100%; width: 100%; height: 100%; background-color: beige; font-size: 150%; text-align: center; transition: bottom 1s;">
+        <div class="textContainer" id="gameSetUp" style="position: absolute; left: 0%; bottom: 100%; width: 100%; height: 100%; background-color: beige; font-size: 150%; text-align: center; transition: bottom 1s;">
             <br><br><br><h2>Game Setup</h2>
             <!--change in accordance with size and bomb num-->
             Level of Difficulty: <span id="difficulty">Easy</span><br><br>
@@ -62,14 +62,14 @@
             <button id="failButton" style="position: absolute; width: 20%; height: 12.5%; left: 40%; top: 43.75%; background-color: rgb(241, 183, 94); opacity: 0; transition: opacity 1s;" onclick="failed();"><strong>Restart?</strong></button>
         </div>
         <!--Show the moves left that the player has-->
-        <div id="movesLeft" style="position: absolute; height: 5%; background-color: rgba(255,255,255,0.5); text-align: center; font-size: 180%; display: none;">
+        <div class="bigText" id="movesLeft" style="position: absolute; height: 5%; background-color: rgba(255,255,255,0.5); text-align: center; font-size: 180%; display: none;">
             <strong>Moves Left: <span id="moves"></span></strong>
         </div>
-        <div id="timeNotification" style="position: absolute; width: 20%; height: 10%; left: 40%; bottom: 100%; background-color: rgba(255,255,255,0.5); text-align: center; font-size: 180%; transition: bottom 0.5s;" onmousedown="redFlagged(event)">
+        <div class="bigText" id="timeNotification" style="position: absolute; width: 20%; height: 10%; left: 40%; bottom: 100%; background-color: rgba(255,255,255,0.5); text-align: center; font-size: 180%; transition: bottom 0.5s;" onmousedown="redFlagged(event)">
             <strong>Time Remaining:</strong><br>
             <span id="time"></span>
         </div>
-        <div id="losePage" style="position: absolute; left: 0%; bottom: 100%; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); color: white; text-align: center; font-size: 175%; transition: bottom 1s;">
+        <div class="pageText" id="losePage" style="position: absolute; left: 0%; bottom: 100%; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); color: white; text-align: center; font-size: 175%; transition: bottom 1s;">
             <br><br><br><br><br><strong>Oops! You lost!</strong><br><br>
             You have accidentally discovered a bomb.<br>
             Next time, I suggest you to be more careful<br>
@@ -79,7 +79,7 @@
             Press "Restart" to restart the game<br>
             <button id="restart" style="width: 200px; height: 100px; background-color: rgb(241, 183, 94);" onclick="restart();"><strong>Restart</strong></button>
         </div>
-        <div id="winPage" style="position: absolute; left: 0%; bottom: 100%; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); color: white; text-align: center; font-size: 175%; transition: bottom 1s;">
+        <div class="pageText" id="winPage" style="position: absolute; left: 0%; bottom: 100%; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); color: white; text-align: center; font-size: 175%; transition: bottom 1s;">
             <br><br><br><br><br><strong>Congradulations! You won!</strong><br><br>
             You have successfully discovered all bombs.<br>
             This task requires a lot of mental calculation<br>
